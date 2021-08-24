@@ -9,6 +9,8 @@ stages:
 variables:
   RAILS_ENV: 'test'
   DB_HOST: postgres
+  POSTGRES_PASSWORD: loquesea
+  POSTGRES_USER: loquesea
 
 before_script:
   - bundle install
