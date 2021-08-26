@@ -41,6 +41,3 @@ yarn-debug.log*
 
 #Env
 .env
-
-#envrc
-.envrc
