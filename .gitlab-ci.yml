@@ -5,6 +5,7 @@ services:
 
 stages:
   - test
+  - deployment
 
 cache:
   paths:
@@ -33,3 +34,21 @@ test:
     - yarn install
     - bundle exec rake db:create db:schema:load
     - bundle exec rake test
+
+deployment_production:
+  stage: deployment
+  script:
+    - gem install dpl
+    - dpl --provider=heroku --app=$HEROKU_APP_NAME_PROD --api_key=$HEROKU_API_KEY
+  only:
+    refs:
+      - master
+
+deployment_development:
+  stage: deployment
+  script:
+    - gem install dpl
+    - dpl --provider=heroku --app=$HEROKU_APP_NAME_STAGING --api_key=$HEROKU_API_KEY
+  only:
+    refs:
+      - development
