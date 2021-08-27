@@ -1,2 +1,3 @@
+# Comment
 module RegistrationsHelper
 end

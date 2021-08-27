@@ -1,2 +1,3 @@
+# Comment
 module HomeHelper
 end
