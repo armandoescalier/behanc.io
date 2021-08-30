@@ -1,0 +1,58 @@
+/*
+  ========================================
+  Default values
+  ========================================
+*/
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+
+* {
+    text-decoration: none;
+}
+
+/*
+  ========================================
+  Body
+  ========================================
+*/
+
+body {
+    font-family: "Roboto", sans-serif;
+    background-color: $main-bg-color;
+    color: $paragraph-color;
+}
+/*
+  ========================================
+  Typography
+  ========================================
+*/
+
+h1 {
+    color: $title-text-color;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+h2 {
+    color: $title-text-color;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+h3 {
+    color: $title-text-color;
+    font-size: 18px;
+    font-weight: 700;
+    padding: 10px 0px;
+}
+
+p {
+    color: $paragraph-color;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.8;
+}
+
+a {
+    color: $links-text-color;
+    font-size: 13px;
+}
