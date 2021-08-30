@@ -1,0 +1,31 @@
+/*
+  ========================================
+  Inputs
+  ========================================
+*/
+
+input {
+  caret-color: $accent-color;
+  outline: none;
+}
+
+input[type="text"] {
+  font-weight: 500;
+  width: 100%;
+  height: auto;
+  border-bottom: 2px solid $accent-color;
+  outline: none;
+  text-align: center;
+}
+
+input[type="submit"] {
+  font-weight: 700;
+  width: fit-content;
+  height: auto;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 50px;
+  background-color: $accent-color;
+  color: $button-text-color;
+  text-align: center;
+}
