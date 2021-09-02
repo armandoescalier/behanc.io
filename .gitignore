@@ -44,3 +44,6 @@ yarn-debug.log*
 
 #envrc
 .envrc
+
+#local storage
+storage

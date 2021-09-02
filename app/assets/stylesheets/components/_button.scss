@@ -4,10 +4,15 @@
   ========================================
 */
 
-button {
+.basic_button {
+    width: 100%;
     font-weight: 700;
     border-radius: 50px;
-    font-size: 15px;
+    font-size: 18px;
+    padding: 5px 20px;
+    margin: auto;
     border: none;
     cursor: pointer;
+    color: $white;
+    background: $accent_color;
 }

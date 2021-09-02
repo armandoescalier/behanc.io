@@ -1,0 +1,30 @@
+<div >
+    <div class="card">
+        <% if @user.profile_picture.attached? %>
+        <%= image_tag @user.profile_picture, class: "user_profile_image" %>
+        <% else %>
+        <div>
+            <%= image_tag "placeholder.jpg" %>
+        </div>
+        <% end %>
+        <h1><%= @user.full_name %></h1>
+        <br>
+        <h4><%= @user.occupation %></h4>
+        <h4><%= @user.company %></h4>
+        <br>
+        <h4><%= @user.location %></h4>
+        <br>
+        <% if user_signed_in? and @user.username == current_user.username %>
+            <div>
+                <%= link_to "Edit profile", edit_user_registration_path, class: "basic_button" %>
+            </div>
+        <% end %>  
+    </div>
+
+    <div class="card">
+        Work
+        <% if user_signed_in? and @user.username == current_user.username %>
+            <%= render "partials/new_project_card" %>
+        <% end %>  
+    </div>
+</div>

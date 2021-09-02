@@ -224,8 +224,12 @@ h2 {
 h3 {
   color: var(--title-text-color);
   font-size: 18px;
-  font-weight: 700;
-  padding: 10px 0px;
+  font-weight: 500;
+  padding: 5px 0;
+}
+
+h4 {
+  padding: 5px 0;
 }
 
 p {
@@ -245,12 +249,17 @@ a {
   Buttons
   ========================================
 */
-button {
+.basic_button {
+  width: 100%;
   font-weight: 700;
   border-radius: 50px;
-  font-size: 15px;
+  font-size: 18px;
+  padding: 5px 20px;
+  margin: auto;
   border: none;
   cursor: pointer;
+  color: var(--white);
+  background: var(--accent-color);
 }
 
 /*
@@ -269,7 +278,6 @@ input[type=text] {
   height: auto;
   border-bottom: 2px solid var(--accent-color);
   outline: none;
-  text-align: center;
 }
 
 input[type=submit] {
@@ -294,7 +302,7 @@ input[type=submit] {
 
 .error_message_container {
   padding: 20px;
-  margin: 15px 0px;
+  margin: 15px 0;
   border: 2px solid red;
 }
 
@@ -305,20 +313,20 @@ input[type=submit] {
   overflow: hidden;
   background-color: var(--bg-color);
 }
-.main_navbar li {
+.main_navbar ul li {
   float: left;
 }
-.main_navbar li a {
+.main_navbar ul li:last-child {
+  float: right;
+}
+.main_navbar ul li a {
   display: block;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
 }
-.main_navbar li a:hover {
+.main_navbar ul li a:hover {
   border-bottom: 2px solid var(--secondary);
-}
-.main_navbar li:last-child {
-  float: right;
 }
 
 .nav-link {
@@ -332,10 +340,14 @@ input[type=submit] {
   float: right;
 }
 
+.user_profile_image {
+  max-width: 150px;
+}
+
 .field {
   display: flex;
   flex-direction: column;
-  margin: 10px 0px;
+  margin: 10px 0;
 }
 
 .background_container_registration {
@@ -343,14 +355,17 @@ input[type=submit] {
   height: 900px;
 }
 
-.form_container {
+.card {
+  display: flex;
   width: 20%;
   height: fit-content;
   padding: 2% 3%;
   background-color: var(--bg-color);
-  border-radius: 8px;
+  border-radius: 6px;
   margin: auto;
   min-width: fit-content;
+  align-items: center;
+  flex-direction: column;
 }
 
 /*# sourceMappingURL=application.css.map */

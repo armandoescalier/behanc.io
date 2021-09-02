@@ -5,13 +5,14 @@ class RegistrationsController < Devise::RegistrationsController
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up,
-                                      keys: %i[first_name last_name
+                                      keys: %i[username first_name last_name
                                                email password password_confirmation
-                                               carrer company country city])
+                                               occupation company country city profile_picture])
 
     devise_parameter_sanitizer.permit(:account_update,
-                                      keys: %i[first_name last_name
+                                      keys: %i[username first_name last_name
                                                email password password_confirmation
-                                               carrer company country city])
+                                               occupation company country city personal_web_site_url
+                                               about_me_title about_me_description profile_picture])
   end
 end
