@@ -2,3 +2,16 @@ inherit_from: .rubocop_todo.yml
 
 Style/Documentation:
   Enabled: false
+
+Metrics/MethodLength:
+    Exclude:
+        - db/**/*
+
+Metrics/AbcSize:
+    Exclude:
+        - db/**/*
+
+Metrics/BlockLength:
+    Exclude:
+        - db/**/*
+        - config/environments/development.rb

@@ -5,25 +5,25 @@
     padding: 0;
     overflow: hidden;
     background-color: $bg-color;
-  }
 
-  li {
-    float: left;
-  }
+    li {
+      float: left;
 
-  li a {
-    display: block;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-  }
+      &:last-child {
+        float: right;
+      }
 
-  li a:hover {
-    border-bottom: 2px solid $secondary;
-  }
+      a {
+        display: block;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
 
-  li:last-child {
-    float: right;
+        &:hover {
+          border-bottom: 2px solid $secondary;
+        }
+      }
+    }
   }
 }
 
