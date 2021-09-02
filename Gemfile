@@ -5,13 +5,10 @@ ruby '3.0.2'
 
 # Dotenv
 gem 'dotenv-rails'
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.4'
-
 # Use pg as the database for Active Record
 gem 'pg'
-
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
 # Use SCSS for stylesheets
@@ -28,11 +25,15 @@ gem 'jbuilder', '~> 2.7'
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use Active Storage variant
-# gem 'image_processing', '~> 1.2'
+gem 'active_storage_validations'
+gem 'image_processing', '~> 1.2'
+
+# AWS S3
+gem 'aws-sdk-s3', require: false
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
-
+# Devise
 gem 'devise'
 
 group :development, :test do

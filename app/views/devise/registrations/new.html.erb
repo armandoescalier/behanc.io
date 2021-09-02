@@ -1,15 +1,13 @@
-
-
 <div class="background_container_registration">
-  <div class="form_container">
+  <div class="card">
     <h1>Sign up</h1>
     
     <div>
-      <p>Ya tienes cuenta?</p>
+      <p>Already have an account?</p>
       <%= render "devise/shared/links" %>
     </div>
 
-    <%= form_for(resource, as: resource_name, url: users_sign_up_path) do |f| %>
+    <%= form_for(resource, as: resource_name, url: create_registrations_path) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
 
     <div>
@@ -18,6 +16,16 @@
         <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
       </div>
 
+      <div class="field">
+        <%= f.label :username %><br />
+        <%= f.text_field :username %>
+      </div>
+
+      <div class="field">
+        <%= f.label :profile_picture %><br />
+        <%= f.file_field :profile_picture %>
+      </div>
+  
       <div class="field">
         <%= f.label :first_name %>
         <%= f.text_field :first_name %>
@@ -29,8 +37,8 @@
       </div>
 
       <div class="field">
-        <%= f.label :carrer %>
-        <%= f.text_field :carrer %>
+        <%= f.label :occupation %>
+        <%= f.text_field :occupation %>
       </div>
 
       <div class="field">

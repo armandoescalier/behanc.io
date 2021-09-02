@@ -4,13 +4,16 @@
 // Base
 @import "./base/reset";
 @import "./base/base";
+@import "./base/typography";
 
 // Components
 @import "./components/button";
 @import "./components/input";
 @import "./components/flash_alerts";
 @import "./components/navbar";
+@import "./components/user_profile_image";
 
 // Layouts
 @import "./layout/registrations";
+@import "./layout/card";
 
