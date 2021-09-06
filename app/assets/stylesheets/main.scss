@@ -11,9 +11,11 @@
 @import "./components/input";
 @import "./components/flash_alerts";
 @import "./components/navbar";
-@import "./components/user_profile_image";
 
 // Layouts
 @import "./layout/registrations";
 @import "./layout/card";
-
+@import "./layout/user_profile";
+@import "./layout/user_work_container";
+@import "./layout/display_cards";
+@import "./layout/home_header";

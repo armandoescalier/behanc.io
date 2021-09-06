@@ -8,7 +8,7 @@
 <div>
   <h2> Basic Information </h2>
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label :email %>
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
@@ -17,69 +17,66 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :username %><br />
+    <%= f.label :username %>
     <%= f.text_field :username %>
   </div>
 
   <div class="field">
-    <% if @user.profile_picture.attached? && @user.profile_picture.representable? %>
-     <%= image_tag @user.profile_picture, class: "user_profile_image" %>
-    <% else %>
-      <div>
-        <%= image_tag "placeholder.jpg" %>
-      </div>
-    <% end %>
+    <div>
+      <%= image_tag @presenter.profile_picture, class: "user_profile_image" %>
+    </div>
+    
     <%= f.file_field :profile_picture %>
   </div>
 
   <div class="field">
-    <%= f.label :first_name %><br />
+    <%= f.label :first_name %>
     <%= f.text_field :first_name %>
   </div>
 
  <div class="field">
-    <%= f.label :last_name %><br />
+    <%= f.label :last_name %>
     <%= f.text_field :last_name %>
   </div>
 
   <div class="field">
-    <%= f.label :occupation %><br />
+    <%= f.label :occupation %>
     <%= f.text_field :occupation %>
   </div>
 
   <div class="field">
-    <%= f.label :company %><br />
+    <%= f.label :company %>
     <%= f.text_field :company %>
   </div>
 
   <div class="field">
-    <%= f.label :country %><br />
+    <%= f.label :country %>
     <%= f.text_field :country %>
   </div>
 
   <div class="field">
-    <%= f.label :city %><br />
+    <%= f.label :city %>
     <%= f.text_field :city %>
   </div>
 
   <div class="field">
-    <%= f.label :personal_web_site_url %><br />
+    <%= f.label :personal_web_site_url %>
     <%= f.text_field :personal_web_site_url %>
   </div>
 
   <div>
     <h3> Change password </h3>
     <div class="field">
-      <%= f.label :new_password %> <i>(leave blank if you don't want to change it)</i><br />
+      <%= f.label :new_password %> <i>(leave blank if you don't want to change it)</i>
       <%= f.password_field :password, autocomplete: "new-password" %>
       <% if @minimum_password_length %>
-        <br />
+        
         <em><%= @minimum_password_length %> characters minimum</em>
       <% end %>
     </div>
 
     <div class="field">
-      <%= f.label :password_confirmation %><br />
+      <%= f.label :password_confirmation %>
       <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
     </div>
   </div>
@@ -89,12 +86,12 @@
     <h2> About me </h2>
 
     <div class="field">
-      <%= f.label :Title %><br />
+      <%= f.label :Title %>
       <%= f.text_field :about_me_title %>
     </div>
 
     <div class="field">
-      <%= f.label :Description %><br />
+      <%= f.label :Description %>
       <%= f.text_field :about_me_description %>
     </div>
   </div>
@@ -102,7 +99,7 @@
   <div>
     <h2> Save changes </h2>
     <div class="field">
-      <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+      <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i>
       <%= f.password_field :current_password, autocomplete: "current-password" %>
     </div>
   </div>

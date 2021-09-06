@@ -3,7 +3,7 @@
   Default values
   ========================================
 */
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap");
 :root {
   /*
       ========================================
@@ -249,17 +249,25 @@ a {
   Buttons
   ========================================
 */
-.basic_button {
-  width: 100%;
+.profile_section_button, .basic_button {
+  width: fit-content;
   font-weight: 700;
   border-radius: 50px;
-  font-size: 18px;
-  padding: 5px 20px;
+  font-size: 16px;
+  padding: 7px 20px;
   margin: auto;
   border: none;
   cursor: pointer;
+}
+
+.basic_button {
   color: var(--white);
   background: var(--accent-color);
+}
+
+.profile_section_button {
+  color: var(--white);
+  background: var(--secondary);
 }
 
 /*
@@ -340,8 +348,8 @@ input[type=submit] {
   float: right;
 }
 
-.user_profile_image {
-  max-width: 150px;
+.navbar_profile_section {
+  margin: 20px;
 }
 
 .field {
@@ -357,15 +365,69 @@ input[type=submit] {
 
 .card {
   display: flex;
-  width: 20%;
+  width: 80%;
   height: fit-content;
-  padding: 2% 3%;
+  padding: 35px 20px;
   background-color: var(--bg-color);
   border-radius: 6px;
   margin: auto;
   min-width: fit-content;
   align-items: center;
   flex-direction: column;
+}
+
+.user_profile_image {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.user_profile_info {
+  display: flex;
+  width: 100%;
+  height: fit-content;
+  padding: 15px 10px;
+  margin: 15px;
+  min-width: fit-content;
+  align-items: center;
+  flex-direction: column;
+}
+
+.user_profile_container {
+  display: grid;
+  margin: 20px 0;
+  grid-gap: 20px;
+  grid-template-columns: 1fr 3fr;
+}
+
+.user_work_container {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 3, 1fr;
+  padding: 20px;
+}
+
+.display_cards_container {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 3, 1fr;
+  padding: 20px;
+}
+
+.home_header {
+  display: flex;
+  width: 100%;
+  margin: 30px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.home_header h1 {
+  font-size: 80px;
+  font-weight: 900;
 }
 
 /*# sourceMappingURL=application.css.map */
