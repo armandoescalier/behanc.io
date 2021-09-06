@@ -1,0 +1,24 @@
+.user_profile_image {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.user_profile_info {
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    padding: 15px 10px;
+    margin: 15px;
+    min-width: fit-content;
+    align-items: center;
+    flex-direction: column;
+}
+
+.user_profile_container{
+    display: grid;
+    margin: 20px 0;
+    grid-gap: 20px;
+    grid-template-columns: 1fr 3fr;
+}
