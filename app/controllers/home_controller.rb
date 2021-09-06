@@ -1,3 +1,3 @@
-class HomeController < AuthorizationsController
+class HomeController < ApplicationController
   def index; end
 end

@@ -1,0 +1,13 @@
+.home_header {
+    display: flex;
+    width: 100%;
+    margin: 30px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    h1{
+        font-size: 80px;
+        font-weight: 900;
+    }
+}

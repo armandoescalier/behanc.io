@@ -4,15 +4,25 @@
   ========================================
 */
 
+%button {
+  width: fit-content;
+  font-weight: 700;
+  border-radius: 50px;
+  font-size: 16px;
+  padding: 7px 20px;
+  margin: auto;
+  border: none;
+  cursor: pointer;
+}
+
 .basic_button {
-    width: 100%;
-    font-weight: 700;
-    border-radius: 50px;
-    font-size: 18px;
-    padding: 5px 20px;
-    margin: auto;
-    border: none;
-    cursor: pointer;
-    color: $white;
-    background: $accent_color;
+  @extend %button;
+  color: $white;
+  background: $accent_color;
+}
+
+.profile_section_button {
+  @extend %button;
+  color: $white;
+  background: $secondary;
 }
