@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_one_attached :profile_picture
+  has_many :projects
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable

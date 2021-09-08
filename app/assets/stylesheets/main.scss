@@ -11,6 +11,7 @@
 @import "./components/input";
 @import "./components/flash_alerts";
 @import "./components/navbar";
+@import "./components/category_with_label";
 
 // Layouts
 @import "./layout/registrations";
@@ -19,3 +20,7 @@
 @import "./layout/user_work_container";
 @import "./layout/display_cards";
 @import "./layout/home_header";
+@import "./layout/project_content";
+
+// Vendors
+@import "./vendors/actiontext";

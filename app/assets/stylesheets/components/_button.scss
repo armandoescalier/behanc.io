@@ -19,6 +19,12 @@
   @extend %button;
   color: $white;
   background: $accent_color;
+  margin: 10px 5px;
+
+  &.danger{
+    background: $danger-color;
+  }
+
 }
 
 .profile_section_button {

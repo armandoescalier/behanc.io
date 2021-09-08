@@ -8,4 +8,10 @@ Rails.application.routes.draw do
   end
 
   resources :profile, only: [:show], param: :username, path: '/'
+
+  post 'project/new', to: 'project#create', as: :create_project
+  get 'projects/all', to: 'project#index', as: :projects_list
+  patch 'project/:id/edit', to: 'project#update', as: :edit_project
+  delete 'project/:id', to: 'project#destroy', as: :delete_project
+  resources :project
 end

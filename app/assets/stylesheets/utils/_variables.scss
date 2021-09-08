@@ -21,6 +21,7 @@
 
   --white: #fff;
   --black: hsl(0, 0%, 0%);
+  --danger-color: rgb(223, 30, 30) ;
   /*
       ========================================
       Text Colors
@@ -59,6 +60,7 @@ $accent-color-light: var(--accent-color-light);
 
 $white: var(--white);
 $black: var(--black);
+$danger-color: var(--danger-color);
 
 // Text colors
 $paragraph-color: var(--paragrah-color);

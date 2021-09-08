@@ -10,3 +10,9 @@
     align-items: center;
     flex-direction: column;
 }
+
+.project_card{
+    height: 200px;
+    background-color: $bg-color;
+    border-radius: 6px;
+}

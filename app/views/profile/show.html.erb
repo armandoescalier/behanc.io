@@ -10,6 +10,8 @@
             <h4><%= @user.occupation %></h4>
             <h4><%= @user.company %></h4>
             <h4><%= @user.location %></h4>
+
+            <h4>Projects: <%= @user.projects.count %></h4>
         </div>
 
         <% if @presenter.current_user? %>
@@ -25,12 +27,27 @@
                 Work
             </button> 
         </div>
-    
-        <p><%= @user.full_name %> has not uploaded any work</p> 
-        
+
         <div class="user_work_container">
+        <% if @user.projects.count > 0 %>
+              <% @user.projects.each do |project| %>
+                <%= link_to project do %>
+                    <div class="project_card">
+                        <div class="project_cover_image">
+                            <%= image_tag(project.cover_image) if project.cover_image.attached? %>
+                        </div>
+                        <%= project.title %>
+                        <%= project.description %>
+                    </div>
+                    <% end %>
+                <% end %>
+        <% else %>
+            <p><%= @user.full_name %> has not uploaded any work</p> 
+        <% end %>
+
+        
             <% if @presenter.current_user? %>
-                <div class="card">
+                <div class="project_card">
                     <%= render "partials/new_project_card" %>
                 </div>
             <% end %>  
