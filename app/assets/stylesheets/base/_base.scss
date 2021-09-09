@@ -13,6 +13,6 @@
 
 body {
     font-family: "Roboto", sans-serif;
-    background-color: $main-bg-color;
-    color: $paragraph-color;
+    background-color: var(--main-bg-color);
+    color: var(--paragraph-color);
 }

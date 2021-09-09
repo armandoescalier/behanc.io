@@ -1,5 +1,5 @@
 <div class="user_profile_container">
-    <div class="card">
+    <div class="card user_profile_card">
         <div>
             <%= image_tag @presenter.profile_picture, class: "user_profile_image" %>
         </div>
@@ -29,10 +29,10 @@
         </div>
 
         <div class="user_work_container">
-        <% if @user.projects.count > 0 %>
+        <% if @user.projects.any? %>
               <% @user.projects.each do |project| %>
                 <%= link_to project do %>
-                    <div class="project_card">
+                    <div class="preview_project_card">
                         <div class="project_cover_image">
                             <%= image_tag(project.cover_image) if project.cover_image.attached? %>
                         </div>
@@ -47,7 +47,7 @@
 
         
             <% if @presenter.current_user? %>
-                <div class="project_card">
+                <div class="preview_project_card">
                     <%= render "partials/new_project_card" %>
                 </div>
             <% end %>  

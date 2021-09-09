@@ -1,0 +1,16 @@
+<h1>All projects</h1>
+
+<div class="display_cards_container">
+  <% @projects.each do |project| %>
+    <%= link_to project do %>
+      <div class="card">
+        <div class="project_cover_image">
+          <%= image_tag(project.cover_image) if project.cover_image.attached? %>
+        </div>
+        
+        <%= project.title %>
+        <%= project.description %>
+      </div>
+    <% end %>
+  <% end %>
+</div>

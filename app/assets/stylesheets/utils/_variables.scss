@@ -1,15 +1,9 @@
-/*
-  ========================================
-  Default values
-  ========================================
-*/
-
 :root {
   /*
       ========================================
       Colors
       ========================================
-    */
+  */
   --primary: #fff;
   --primary-dark: #eee;
   --secondary: #000;
@@ -21,54 +15,25 @@
 
   --white: #fff;
   --black: hsl(0, 0%, 0%);
-  --danger-color: rgb(223, 30, 30) ;
+
+  --danger-color: rgb(223, 30, 30);
+  --alert-color: lightcoral;
+  --notice-color: lightgreen;
   /*
       ========================================
       Text Colors
       ========================================
-    */
-  --paragrah-color: hsl(0, 0%, 48%);
+  */
+  --paragraph-color: hsl(0, 0%, 48%);
   --button-text-color: #fff;
   --title-text-color: #000;
   --links-text-color: #0057ff;
-
   --navbar-item-text-color: #000;
   /*
       ========================================
       Backgrounds colors
       ========================================
-    */
+  */
   --bg-color: #fff;
   --main-bg-color: #eee;
 }
-
-/*
-      ========================================
-      Variables
-      ========================================
-*/
-
-// Colors
-$primary: var(--primary);
-$primary-dark: var(--primary-dark);
-$secondary: var(--secondary);
-$secondary-dark: var(--secondary-dark);
-$light: var(--light);
-$light-dark: var(--light-dark);
-$accent-color: var(--accent-color);
-$accent-color-light: var(--accent-color-light);
-
-$white: var(--white);
-$black: var(--black);
-$danger-color: var(--danger-color);
-
-// Text colors
-$paragraph-color: var(--paragrah-color);
-$button-text-color: var(--button-text-color);
-$title-text-color: var(--title-text-color);
-$links-text-color: var(--links-text-color);
-$navbar-item-text-color: var(--navbar-item-text-color);
-
-// Background colors
-$bg-color: var(--bg-color);
-$main-bg-color: var(--main-bg-color);

@@ -1,4 +1,4 @@
-class ProfileController < ApplicationController
+class ProfilesController < ApplicationController
   def show
     @user = User.find_by_username(params[:username])
     @presenter = UserPresenter.new(@user, current_user)

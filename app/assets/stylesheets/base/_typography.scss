@@ -5,19 +5,19 @@
 */
 
 h1 {
-    color: $title-text-color;
+    color: var(--title-text-color);
     font-size: 32px;
     font-weight: 700;
 }
 
 h2 {
-    color: $title-text-color;
+    color: var(--title-text-color);
     font-size: 20px;
     font-weight: 700;
 }
 
 h3 {
-    color: $title-text-color;
+    color: var(--title-text-color);
     font-size: 18px;
     font-weight: 500;
     padding: 5px 0;
@@ -28,13 +28,13 @@ h4 {
 }
 
 p {
-    color: $paragraph-color;
+    color: var(--paragraph-color);
     font-size: 16px;
     font-weight: 400;
     line-height: 1.8;
 }
 
 a {
-    color: $links-text-color;
+    color: var(--links-text-color);
     font-size: 13px;
 }

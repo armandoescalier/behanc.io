@@ -10,7 +10,7 @@
       ========================================
       Colors
       ========================================
-    */
+  */
   --primary: #fff;
   --primary-dark: #eee;
   --secondary: #000;
@@ -21,13 +21,15 @@
   --accent-color-light: #f5f8ff;
   --white: #fff;
   --black: hsl(0, 0%, 0%);
-  --danger-color: rgb(223, 30, 30) ;
+  --danger-color: rgb(223, 30, 30);
+  --alert-color: lightcoral;
+  --notice-color: lightgreen;
   /*
       ========================================
       Text Colors
       ========================================
-    */
-  --paragrah-color: hsl(0, 0%, 48%);
+  */
+  --paragraph-color: hsl(0, 0%, 48%);
   --button-text-color: #fff;
   --title-text-color: #000;
   --links-text-color: #0057ff;
@@ -36,16 +38,11 @@
       ========================================
       Backgrounds colors
       ========================================
-    */
+  */
   --bg-color: #fff;
   --main-bg-color: #eee;
 }
 
-/*
-      ========================================
-      Variables
-      ========================================
-*/
 /*
   ========================================
   RESET 
@@ -186,18 +183,13 @@ table {
 
 /*
   ========================================
-  Default values
-  ========================================
-*/
-/*
-  ========================================
   Body
   ========================================
 */
 body {
   font-family: "Roboto", sans-serif;
   background-color: var(--main-bg-color);
-  color: var(--paragrah-color);
+  color: var(--paragraph-color);
 }
 
 /*
@@ -229,7 +221,7 @@ h4 {
 }
 
 p {
-  color: var(--paragrah-color);
+  color: var(--paragraph-color);
   font-size: 16px;
   font-weight: 400;
   line-height: 1.8;
@@ -294,6 +286,7 @@ input[type=submit] {
   height: auto;
   padding: 10px 15px;
   border: none;
+  margin: 15px 0;
   border-radius: 50px;
   background-color: var(--accent-color);
   color: var(--button-text-color);
@@ -301,17 +294,17 @@ input[type=submit] {
 }
 
 .notice {
-  background-color: lightgreen;
+  background-color: var(--notice-color);
 }
 
 .alert {
-  background-color: lightcoral;
+  background-color: var(--alert-color);
 }
 
 .error_message_container {
   padding: 20px;
   margin: 15px 0;
-  border: 2px solid red;
+  border: 2px solid var(--danger-color);
 }
 
 .main_navbar ul {
@@ -344,7 +337,6 @@ input[type=submit] {
 }
 
 .navbar_last_child {
-  background-color: red;
   float: right;
 }
 
@@ -374,21 +366,39 @@ input[type=submit] {
 
 .card {
   display: flex;
-  width: 80%;
+  max-width: 70%;
   height: fit-content;
   padding: 35px 20px;
   background-color: var(--bg-color);
   border-radius: 6px;
-  margin: auto;
-  min-width: fit-content;
+  margin: 40px auto;
   align-items: center;
   flex-direction: column;
 }
+.card.user_profile_card {
+  max-width: 100%;
+  margin: 20px 70px;
+}
+.card.project_show_card {
+  padding: 35px 0;
+}
 
-.project_card {
+.preview_project_card {
   height: 200px;
   background-color: var(--bg-color);
   border-radius: 6px;
+}
+
+.create_project_card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+.create_project_card p {
+  margin: 15px 0;
 }
 
 .user_profile_image {
@@ -455,7 +465,7 @@ input[type=submit] {
   width: 100%;
   background: var(--secondary);
   margin: 20px 0;
-  padding: 30px;
+  padding: 30px 0;
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -464,7 +474,7 @@ input[type=submit] {
   color: var(--white);
 }
 .project_footer p {
-  color: var(--paragrah-color);
+  color: var(--paragraph-color);
 }
 
 .project_cover_image img {

@@ -17,18 +17,17 @@
 
 .basic_button {
   @extend %button;
-  color: $white;
-  background: $accent_color;
+  color: var(--white);
+  background: var(--accent-color);
   margin: 10px 5px;
 
-  &.danger{
-    background: $danger-color;
+  &.danger {
+    background: var(--danger-color);
   }
-
 }
 
 .profile_section_button {
   @extend %button;
-  color: $white;
-  background: $secondary;
+  color: var(--white);
+  background: var(--secondary);
 }
