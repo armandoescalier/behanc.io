@@ -49,6 +49,8 @@ deployment_development:
   script:
     - gem install dpl
     - dpl --provider=heroku --app=$HEROKU_APP_NAME_STAGING --api_key=$HEROKU_API_KEY
+    - bundle exec rake assets:clobber
+    - bundle exec rake assets:precompile
   only:
     refs:
       - development
