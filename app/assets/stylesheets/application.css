@@ -4,12 +4,13 @@
   ========================================
 */
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap");
+@import "trix/dist/trix.css";
 :root {
   /*
       ========================================
       Colors
       ========================================
-    */
+  */
   --primary: #fff;
   --primary-dark: #eee;
   --secondary: #000;
@@ -20,12 +21,15 @@
   --accent-color-light: #f5f8ff;
   --white: #fff;
   --black: hsl(0, 0%, 0%);
+  --danger-color: rgb(223, 30, 30);
+  --alert-color: lightcoral;
+  --notice-color: lightgreen;
   /*
       ========================================
       Text Colors
       ========================================
-    */
-  --paragrah-color: hsl(0, 0%, 48%);
+  */
+  --paragraph-color: hsl(0, 0%, 48%);
   --button-text-color: #fff;
   --title-text-color: #000;
   --links-text-color: #0057ff;
@@ -34,16 +38,11 @@
       ========================================
       Backgrounds colors
       ========================================
-    */
+  */
   --bg-color: #fff;
   --main-bg-color: #eee;
 }
 
-/*
-      ========================================
-      Variables
-      ========================================
-*/
 /*
   ========================================
   RESET 
@@ -138,7 +137,6 @@ video {
   padding: 0;
   border: 0;
   font-size: 100%;
-  font: inherit;
   vertical-align: baseline;
 }
 
@@ -161,9 +159,8 @@ body {
   line-height: 1;
 }
 
-ol,
-ul {
-  list-style: none;
+a {
+  text-decoration: none;
 }
 
 blockquote,
@@ -186,22 +183,13 @@ table {
 
 /*
   ========================================
-  Default values
-  ========================================
-*/
-* {
-  text-decoration: none;
-}
-
-/*
-  ========================================
   Body
   ========================================
 */
 body {
   font-family: "Roboto", sans-serif;
   background-color: var(--main-bg-color);
-  color: var(--paragrah-color);
+  color: var(--paragraph-color);
 }
 
 /*
@@ -233,7 +221,7 @@ h4 {
 }
 
 p {
-  color: var(--paragrah-color);
+  color: var(--paragraph-color);
   font-size: 16px;
   font-weight: 400;
   line-height: 1.8;
@@ -263,6 +251,10 @@ a {
 .basic_button {
   color: var(--white);
   background: var(--accent-color);
+  margin: 10px 5px;
+}
+.basic_button.danger {
+  background: var(--danger-color);
 }
 
 .profile_section_button {
@@ -294,6 +286,7 @@ input[type=submit] {
   height: auto;
   padding: 10px 15px;
   border: none;
+  margin: 15px 0;
   border-radius: 50px;
   background-color: var(--accent-color);
   color: var(--button-text-color);
@@ -301,17 +294,17 @@ input[type=submit] {
 }
 
 .notice {
-  background-color: lightgreen;
+  background-color: var(--notice-color);
 }
 
 .alert {
-  background-color: lightcoral;
+  background-color: var(--alert-color);
 }
 
 .error_message_container {
   padding: 20px;
   margin: 15px 0;
-  border: 2px solid red;
+  border: 2px solid var(--danger-color);
 }
 
 .main_navbar ul {
@@ -344,7 +337,6 @@ input[type=submit] {
 }
 
 .navbar_last_child {
-  background-color: red;
   float: right;
 }
 
@@ -352,10 +344,19 @@ input[type=submit] {
   margin: 20px;
 }
 
+.category_with_label {
+  display: flex;
+  flex-direction: row;
+  padding: 5px 0;
+}
+
 .field {
   display: flex;
   flex-direction: column;
   margin: 10px 0;
+}
+.field h4 {
+  font-weight: 600;
 }
 
 .background_container_registration {
@@ -365,15 +366,39 @@ input[type=submit] {
 
 .card {
   display: flex;
-  width: 80%;
+  max-width: 70%;
   height: fit-content;
   padding: 35px 20px;
   background-color: var(--bg-color);
   border-radius: 6px;
-  margin: auto;
-  min-width: fit-content;
+  margin: 40px auto;
   align-items: center;
   flex-direction: column;
+}
+.card.user_profile_card {
+  max-width: 100%;
+  margin: 20px 70px;
+}
+.card.project_show_card {
+  padding: 35px 0;
+}
+
+.preview_project_card {
+  height: 200px;
+  background-color: var(--bg-color);
+  border-radius: 6px;
+}
+
+.create_project_card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+.create_project_card p {
+  margin: 15px 0;
 }
 
 .user_profile_image {
@@ -403,7 +428,7 @@ input[type=submit] {
 
 .user_work_container {
   display: grid;
-  grid-gap: 10px;
+  grid-gap: 15px;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 3, 1fr;
   padding: 20px;
@@ -428,6 +453,51 @@ input[type=submit] {
 .home_header h1 {
   font-size: 80px;
   font-weight: 900;
+}
+
+.project_content_container {
+  margin: 30px;
+}
+
+.project_footer {
+  display: flex;
+  height: 10%;
+  width: 100%;
+  background: var(--secondary);
+  margin: 20px 0;
+  padding: 30px 0;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.project_footer h2 {
+  color: var(--white);
+}
+.project_footer p {
+  color: var(--paragraph-color);
+}
+
+.project_cover_image img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.trix-content .attachment-gallery > action-text-attachment,
+.trix-content .attachment-gallery > .attachment {
+  flex: 1 0 33%;
+  padding: 0 0.5em;
+  max-width: 33%;
+}
+.trix-content .attachment-gallery.attachment-gallery--2 > action-text-attachment,
+.trix-content .attachment-gallery.attachment-gallery--2 > .attachment, .trix-content .attachment-gallery.attachment-gallery--4 > action-text-attachment,
+.trix-content .attachment-gallery.attachment-gallery--4 > .attachment {
+  flex-basis: 50%;
+  max-width: 50%;
+}
+.trix-content action-text-attachment .attachment {
+  padding: 0 !important;
+  max-width: 100% !important;
 }
 
 /*# sourceMappingURL=application.css.map */

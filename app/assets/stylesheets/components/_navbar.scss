@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: $bg-color;
+    background-color: var(--bg-color);
 
     li {
       float: left;
@@ -20,7 +20,7 @@
         text-decoration: none;
 
         &:hover {
-          border-bottom: 2px solid $secondary;
+          border-bottom: 2px solid var(--secondary);
         }
       }
     }
@@ -30,11 +30,10 @@
 .nav-link {
   font-size: 18px;
   font-weight: 500;
-  color: $navbar-item-text-color;
+  color: var(--navbar-item-text-color);
 }
 
 .navbar_last_child {
-  background-color: red;
   float: right;
 }
 

@@ -1,13 +1,13 @@
 .notice {
-    background-color: lightgreen;
+    background-color: var(--notice-color);
 }
 
 .alert {
-    background-color: lightcoral;
+    background-color: var(--alert-color);
 }
 
 .error_message_container{
     padding: 20px;
     margin: 15px 0;
-    border: 2px solid red;
+    border: 2px solid var(--danger-color);
 }

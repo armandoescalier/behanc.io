@@ -7,5 +7,7 @@ Rails.application.routes.draw do
     put 'users/edit', to: 'registrations#update', as: :edit_registrations
   end
 
-  resources :profile, only: [:show], param: :username, path: '/'
+  resources :profiles, only: [:show], param: :username, path: '/'
+
+  resources :projects
 end

@@ -1,7 +1,7 @@
 require 'test_helper'
 
-class ProfileControllerTest < ActionDispatch::IntegrationTest
-  test 'authenticated users can get others users profile' do
+class ProfilesControllerTest < ActionDispatch::IntegrationTest
+  test 'authenticated users can get edit view of their own profile' do
     sign_in users(:joe)
 
     get edit_registrations_path
