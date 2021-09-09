@@ -10,8 +10,4 @@ class Project < ApplicationRecord
   validates :category, presence: true
   validates :content, presence: true
   validates :cover_image, content_type: ['image/jpeg', 'image/png', 'image/jpg'], presence: true
-
-  def categories
-    ['Graphic Design', 'Illustration', 'Photography', 'Interaction Design', 'Fashion', 'Product Design', 'Architecture', 'Advertising']
-  end
 end
