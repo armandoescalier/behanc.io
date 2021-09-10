@@ -3,6 +3,11 @@
     width: 150px;
     border-radius: 50%;
     object-fit: cover;
+
+    &.smaller {
+        height: 60px;
+        width: 60px;
+    }
 }
 
 .user_profile_info {
@@ -16,7 +21,7 @@
     flex-direction: column;
 }
 
-.user_profile_container{
+.user_profile_container {
     display: grid;
     margin: 20px 0;
     grid-gap: 20px;

@@ -1,13 +1,14 @@
-.project_content_container{
+.project_content_container {
     margin: 30px;
 }
 
-.project_footer{
+.project_footer {
     display: flex;
     height: 10%;
     width: 100%;
     background: var(--secondary);
     margin: 20px 0;
+    margin-top: 0;
     padding: 30px 0;
     align-items: center;
     justify-content: center;
@@ -22,8 +23,21 @@
     }
 }
 
-.project_cover_image img{
+.project_cover_image img {
     width: 100%;
     height: 150px;
     object-fit: cover;
+}
+
+.project_comments {
+    display: flex;
+    flex-direction: row;
+    width: inherit;
+    justify-content: space-between;
+
+    .text_area {
+        width: inherit;
+        height: 90px;
+        resize: none;
+    }
 }
