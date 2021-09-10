@@ -16,4 +16,8 @@ class User < ApplicationRecord
   def location
     "#{city}, #{country}"
   end
+
+  def to_param
+    username
+  end
 end

@@ -26,8 +26,8 @@
   <% if user_signed_in? %>
     <% if @project.user_id == current_user.id %>
       <div>
-        <%= link_to "Update project", edit_project_path(@project.id), class: "basic_button" %>
-        <%= link_to "Destroy project", project_path(@project.id), method: :delete, data: { confirm: "Are you sure?" }, class: "basic_button danger" %>
+        <%= link_to "Update project", edit_project_path(@project), class: "basic_button" %>
+        <%= link_to "Destroy project", project_path(@project), method: :delete, data: { confirm: "Are you sure?" }, class: "basic_button danger" %>
       </div>
     <% end %>
   <% end %>
@@ -48,10 +48,14 @@
     </div>
     <div class="flex_row" >
       <div>
-        <%= image_tag @project.user.profile_picture, class: "user_profile_image smaller" %>
+        <%= link_to profile_path(@project.user) do %>
+          <%= image_tag @project.user.profile_picture, class: "user_profile_image smaller" %>
+        <% end %>
       </div>
       <div>
-        <h3><%= @project.user.full_name %></h3>
+        <%= link_to profile_path(@project.user) do %>
+          <h3><%= @project.user.full_name %></h3>
+        <% end %>
         <p><i class="fas fa-map-marker-alt"></i> <%= @project.user.location %></p>
       </div>
     </div>
