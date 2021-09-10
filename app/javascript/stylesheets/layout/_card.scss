@@ -10,11 +10,6 @@
     flex-direction: column;
     box-shadow: var(--shadow-color) 0px 1px 4px;
 
-    &.user_profile_card {
-        max-width: 100%;
-        margin: 20px 70px;
-    }
-
     &.project_show_card {
         padding: 35px 0;
         margin-bottom: 0;
@@ -26,20 +21,16 @@
         margin-top: 0;
     }
 
+    &.user_profile_card,
+    &.project_owner_card,
+    &.project_statistics_card,
     &.project_comments_card {
         width: 100%;
         margin: 20px 70px;
+    }
+
+    &.project_comments_card {
         padding: 35px 30px;
-    }
-
-    &.project_owner_card {
-        width: 100%;
-        margin: 20px 70px;
-    }
-
-    &.project_statistics_card{
-        width: 100%;
-        margin: 20px 70px;
     }
 }
 
