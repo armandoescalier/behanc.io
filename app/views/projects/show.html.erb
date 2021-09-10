@@ -48,10 +48,14 @@
     </div>
     <div class="flex_row" >
       <div>
-        <%= image_tag @project.user.profile_picture, class: "user_profile_image smaller" %>
+        <%= link_to profile_path(@project.user.username) do %>
+          <%= image_tag @project.user.profile_picture, class: "user_profile_image smaller" %>
+        <% end %>
       </div>
       <div>
-        <h3><%= @project.user.full_name %></h3>
+        <%= link_to profile_path(@project.user.username) do %>
+          <h3><%= @project.user.full_name %></h3>
+        <% end %>
         <p><i class="fas fa-map-marker-alt"></i> <%= @project.user.location %></p>
       </div>
     </div>
