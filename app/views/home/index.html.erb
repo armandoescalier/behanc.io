@@ -4,7 +4,7 @@
         <h3>Projects presented by our specialists</h3>
     </div>
     <div class="display_cards_container">
-      <% @project.sort.each do |project| %>
+      <% @projects.each do |project| %>
         <div class="preview_project_card">
           <%= link_to project do %>
             <div class="project_cover_image">
