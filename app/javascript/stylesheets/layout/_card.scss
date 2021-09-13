@@ -38,6 +38,13 @@
     height: 200px;
     background-color: var(--bg-color);
     border-radius: 6px;
+
+    a {
+        // color: var(--preview-card-text);
+        &:hover {
+            text-decoration: underline;
+        }
+    }
 }
 
 .create_project_card {

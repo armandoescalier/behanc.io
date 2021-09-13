@@ -30,27 +30,31 @@
 
         <div class="user_work_container">
         <% if @user.projects.any? %>
-              <% @user.projects.each do |project| %>
-                <%= link_to project do %>
-                    <div class="preview_project_card">
-                        <div class="project_cover_image">
-                            <%= image_tag(project.cover_image) if project.cover_image.attached? %>
-                        </div>
-                        <%= project.title %>
-                        <%= project.description %>
+              <% @user.projects.sort.each do |project| %>
+                <div class="preview_project_card">
+                  <%= link_to project do %>
+                    <div class="project_cover_image">
+                      <%= image_tag(project.cover_image) if project.cover_image.attached? %>
                     </div>
+                    
+                    <%= project.title %>
+                    <%= link_to profile_path(project.user) do %>
+                      <%= project.user.full_name %>
                     <% end %>
-                <% end %>
+                    <i class="fas fa-thumbs-up"></i> 0
+                  <% end %>
+                </div>
+              <% end %>
         <% else %>
-            <p><%= @user.full_name %> has not uploaded any work</p> 
+          <p><%= @user.full_name %> has not uploaded any work</p> 
         <% end %>
 
         
-            <% if @presenter.current_user? %>
-                <div class="preview_project_card">
-                    <%= render "partials/new_project_card" %>
-                </div>
-            <% end %>  
+          <% if @presenter.current_user? %>
+            <div class="preview_project_card">
+              <%= render "partials/new_project_card" %>
+            </div>
+          <% end %>  
         </div>
     </div>
     

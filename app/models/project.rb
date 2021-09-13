@@ -10,4 +10,8 @@ class Project < ApplicationRecord
   validates :category, presence: true
   validates :content, presence: true
   validates :cover_image, content_type: ['image/jpeg', 'image/png', 'image/jpg'], presence: true
+
+  def <=>(other)
+    other.created_at <=> created_at
+  end
 end
