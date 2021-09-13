@@ -36,13 +36,22 @@
                     <div class="project_cover_image">
                       <%= image_tag(project.cover_image) if project.cover_image.attached? %>
                     </div>
-                    
-                    <%= project.title %>
-                    <%= link_to profile_path(project.user) do %>
-                      <%= project.user.full_name %>
-                    <% end %>
-                    <i class="fas fa-thumbs-up"></i> 0
                   <% end %>
+                    
+                  <div class="prewiew_project_data">
+                    <div>
+                      <%= link_to project_path(project) do %>
+                        <h4><%= project.title %></h4>
+                      <% end %>
+                      <%= link_to profile_path(project.user) do %>
+                        <%= project.user.full_name %>
+                      <% end %>
+                    </div>
+                    
+                    <div>
+                      <i class="fas fa-thumbs-up"></i> 0
+                    </div>
+                  </div>
                 </div>
               <% end %>
         <% else %>
