@@ -32,15 +32,17 @@
     <% end %>
   <% end %>
 
-  <div class="card project_comments_card">
-    <div class="project_comments">
-      <%= image_tag @project.user.profile_picture, class: "user_profile_image smaller" %>
-      <textarea class="project_comments text_area" placeholder = "What are your thoughts on this project?"></textarea>
+  <% if user_signed_in? %>
+    <div class="card project_comments_card">
+      <div class="project_comments">
+        <%= image_tag current_user.profile_picture, class: "user_profile_image smaller" %>
+        <textarea class="project_comments text_area" placeholder = "What are your thoughts on this project?"></textarea>
+      </div>
+      <div>
+        <button class="basic_button">Post a Comment</button>
+      </div>
     </div>
-    <div>
-      <button class="basic_button">Post a Comment</button>
-    </div>
-  </div>
+  <% end %>
 
   <div class="card project_owner_card">
     <div>
