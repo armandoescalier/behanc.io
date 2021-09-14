@@ -15,7 +15,7 @@
     width: 100%;
     height: fit-content;
     padding: 15px 10px;
-    margin: 15px;
+    margin: 15px 15px 0;
     min-width: fit-content;
     align-items: center;
     flex-direction: column;
@@ -33,4 +33,19 @@
     align-content: space-between;
     justify-content: space-between;
     padding: 5px 0;
+}
+
+.profile_about_me {
+    width: 100%;
+    margin: 15px 0;
+
+    h5,
+    p {
+        font-size: 14px;
+    }
+}
+
+.profile_member_since {
+    margin: 10px;
+    font-size: 14px;
 }

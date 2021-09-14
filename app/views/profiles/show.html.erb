@@ -45,6 +45,17 @@
           <div> <%= @user.given_follows.count %></div>
         </div>
       </div>
+
+      <% if @user.about_me_description.present? %>
+        <div class="profile_about_me">
+          <h5>About me</h5>
+          <p><%= @user.about_me_description %></p>
+        </div>
+      <% end %>
+
+      <div class="full_width center">
+        <p class="profile_member_since">Member since: <%= @user.created_at.to_date %></p>
+      </div>
     </div>
 
     <div>
@@ -83,7 +94,6 @@
         <% else %>
           <p><%= @user.full_name %> has not uploaded any work</p> 
         <% end %>
-
         
         <% if @presenter.current_user? %>
           <div class="preview_project_card">
@@ -92,5 +102,4 @@
         <% end %>  
       </div>
     </div>
-    
 </div>
