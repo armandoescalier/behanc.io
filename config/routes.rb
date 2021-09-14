@@ -11,10 +11,5 @@ Rails.application.routes.draw do
 
   resources :projects
 
-  resources :users do
-    member do
-      post 'follow'
-      post 'unfollow'
-    end
-  end
+  resources :follows
 end
