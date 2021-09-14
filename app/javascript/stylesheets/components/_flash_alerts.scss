@@ -1,8 +1,14 @@
 .notice {
+    display: flex;
+    align-content: center;
+    justify-content: center;
     background-color: var(--notice-color);
 }
 
 .alert {
+    display: flex;
+    align-content: center;
+    justify-content: center;
     background-color: var(--alert-color);
 }
 

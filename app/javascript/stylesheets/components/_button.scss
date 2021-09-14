@@ -24,6 +24,12 @@
   &.danger {
     background: var(--danger-color);
   }
+
+  &.edit_profile_button {
+    display: flex;
+    width: auto;
+    justify-content: center;
+  }
 }
 
 .profile_section_button {
