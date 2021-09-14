@@ -27,3 +27,25 @@
     grid-gap: 20px;
     grid-template-columns: 1fr 3fr;
 }
+
+.follows_profile {
+    display: flex;
+    align-content: space-between;
+    justify-content: space-between;
+    padding: 5px 0;
+}
+
+.profile_about_me {
+    width: 100%;
+    margin: 15px 0;
+
+    h5,
+    p {
+        font-size: 14px;
+    }
+}
+
+.profile_member_since {
+    margin: 10px;
+    font-size: 14px;
+}

@@ -1,9 +1,15 @@
-.notice {
-    background-color: var(--notice-color);
-}
+.flash {
+    display: flex;
+    align-content: center;
+    justify-content: center;
 
-.alert {
-    background-color: var(--alert-color);
+    &.notice {
+        background-color: var(--notice-color);
+    }
+
+    &.alert {
+        background-color: var(--alert-color);
+    }
 }
 
 .error_message_container {

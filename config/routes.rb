@@ -10,4 +10,6 @@ Rails.application.routes.draw do
   resources :profiles, only: [:show], param: :username, path: '/'
 
   resources :projects
+
+  resources :follows, only: %i[create destroy]
 end

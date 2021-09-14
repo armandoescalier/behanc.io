@@ -1,70 +1,107 @@
 <div class="user_profile_container">
     <div class="card user_profile_card">
-        <div>
-            <%= image_tag @presenter.profile_picture, class: "user_profile_image" %>
+      <div>
+        <%= image_tag @presenter.profile_picture, class: "user_profile_image" %>
+      </div>
+      
+      <div class="user_profile_info">
+        <h1><%= @user.full_name %></h1>
+        <h4><%= @user.occupation %></h4>
+        <h4><%= @user.company %></h4>
+        <h4><%= @user.location %></h4>
+      </div>
+
+      <% if @presenter.current_user? %>
+        <div class="full_width">
+          <%= link_to edit_user_registration_path, class: "basic_button edit_profile_button" do %>
+            <i class="fas fa-plus-circle"></i> Edit Profile
+          <% end %>
         </div>
+      <% end %> 
 
-        
-        <div class="user_profile_info">
-            <h1><%= @user.full_name %></h1>
-            <h4><%= @user.occupation %></h4>
-            <h4><%= @user.company %></h4>
-            <h4><%= @user.location %></h4>
+      <div>
+        <% if user_signed_in? %>
+          <% if @user.id != current_user.id %>
+            <% if current_user.followings.include?(@user) %>
+              <%= link_to "Unfollow", follow_path(@user.id), method: :delete, class: "basic_button" %>
+            <% else %>
+              <%= link_to "Follow", follows_path(id: @user.id), method: :post, class: "basic_button" %>
+            <% end %>
+          <% end %>
+        <% else %>
+          <%= link_to "Follow", new_user_session_path, class: "basic_button edit_profile_button" %>
+        <% end %>
+      </div>
 
-            <h4>Projects: <%= @user.projects.count %></h4>
+      <div class="full_width">
+        <div class="follows_profile">
+          <div> Projects </div>
+          <div><%= @user.projects.count %></div>
         </div>
+        <div class="follows_profile">
+          <div> Followers </div>
+          <div><%= @user.followers.count %></div>
+        </div>
+        <div class="follows_profile">
+          <div> Follows </div> 
+          <div> <%= @user.given_follows.count %></div>
+        </div>
+      </div>
 
-        <% if @presenter.current_user? %>
-            <div>
-                <%= link_to "Edit profile", edit_user_registration_path, class: "basic_button" %>
-            </div>
-        <% end %>  
+      <% if @user.about_me_description.present? %>
+        <div class="profile_about_me">
+          <h5>About me</h5>
+          <p><%= @user.about_me_description %></p>
+        </div>
+      <% end %>
+
+      <div class="full_width center">
+        <p class="profile_member_since">Member since: <%= @user.created_at.to_date %></p>
+      </div>
     </div>
 
     <div>
-        <div class="navbar_profile_section">
-            <button class="profile_section_button"> 
-                Work
-            </button> 
-        </div>
+      <div class="navbar_profile_section">
+        <button class="profile_section_button"> 
+          Work
+        </button> 
+      </div>
 
-        <div class="user_work_container">
+      <div class="user_work_container">
         <% if @user.projects.any? %>
-              <% @user.projects.each do |project| %>
-                <div class="preview_project_card">
-                  <%= link_to project do %>
-                    <div class="project_cover_image">
-                      <%= image_tag(project.cover_image) if project.cover_image.attached? %>
-                    </div>
-                  <% end %>
-                    
-                  <div class="prewiew_project_data">
-                    <div>
-                      <%= link_to project_path(project) do %>
-                        <h4><%= project.title %></h4>
-                      <% end %>
-                      <%= link_to profile_path(project.user) do %>
-                        <%= project.user.full_name %>
-                      <% end %>
-                    </div>
-                    
-                    <div>
-                      <i class="fas fa-thumbs-up"></i> 0
-                    </div>
-                  </div>
+          <% @user.projects.each do |project| %>
+            <div class="preview_project_card">
+              <%= link_to project do %>
+                <div class="project_cover_image">
+                  <%= image_tag(project.cover_image) if project.cover_image.attached? %>
                 </div>
               <% end %>
+                
+              <div class="prewiew_project_data">
+                <div>
+                  <%= link_to project_path(project) do %>
+                    <h4><%= project.title %></h4>
+                  <% end %>
+                  <%= link_to profile_path(project.user) do %>
+                    <%= project.user.full_name %>
+                  <% end %>
+                </div>
+                
+                <div>
+                  <i class="fas fa-thumbs-up"></i> 0
+                </div>
+              </div>
+            </div>
+          <% end %>
         <% else %>
           <p><%= @user.full_name %> has not uploaded any work</p> 
         <% end %>
-
         
-          <% if @presenter.current_user? %>
-            <div class="preview_project_card">
-              <%= render "partials/new_project_card" %>
-            </div>
-          <% end %>  
-        </div>
+        <% if @presenter.current_user? %>
+          <div class="preview_project_card">
+            <%= render "partials/new_project_card" %>
+          </div>
+        <% end %>  
+      </div>
     </div>
-    
 </div>
