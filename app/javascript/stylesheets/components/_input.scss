@@ -7,14 +7,19 @@
 input {
   caret-color: var(--accent-color);
   outline: none;
+  border: 0;
+  font-size: 16px;
+  border-bottom: 1px solid var(--light);
+
+  &:focus {
+    border-bottom: 2px solid var(--accent-color );
+  }
 }
 
 input[type="text"] {
   font-weight: 500;
   width: 100%;
   height: auto;
-  border-bottom: 2px solid var(--accent-color);
-  outline: none;
 }
 
 input[type="submit"] {
@@ -28,4 +33,5 @@ input[type="submit"] {
   background-color: var(--accent-color);
   color: var(--button-text-color);
   text-align: center;
+  cursor: pointer;
 }

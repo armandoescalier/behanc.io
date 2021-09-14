@@ -9,7 +9,7 @@
   font-weight: 700;
   border-radius: 50px;
   font-size: 16px;
-  padding: 7px 20px;
+  padding: 10px 20px;
   margin: auto;
   border: none;
   cursor: pointer;
@@ -23,6 +23,12 @@
 
   &.danger {
     background: var(--danger-color);
+  }
+
+  &.edit_profile_button {
+    display: flex;
+    width: auto;
+    justify-content: center;
   }
 }
 

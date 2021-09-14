@@ -6,3 +6,12 @@
         padding: 10px;
     }
 }
+
+.full_width {
+    width: 100%;
+
+    &.center {
+        display: flex;
+        justify-content: center;
+    }
+}
