@@ -11,6 +11,10 @@ Rails.application.routes.draw do
 
   resources :projects
 
-  post '/users/:id/follow', to: 'users#follow', as: 'follow_user'
-  post '/users/:id/unfollow', to: 'users#unfollow', as: 'unfollow_user'
+  resources :users do
+    member do
+      post 'follow'
+      post 'unfollow'
+    end
+  end
 end
