@@ -11,5 +11,5 @@ Rails.application.routes.draw do
 
   resources :projects
 
-  resources :follows
+  resources :follows, only: %i[create destroy]
 end

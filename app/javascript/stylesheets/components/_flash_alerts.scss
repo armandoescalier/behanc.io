@@ -1,15 +1,15 @@
-.notice {
+.flash {
     display: flex;
     align-content: center;
     justify-content: center;
-    background-color: var(--notice-color);
-}
 
-.alert {
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    background-color: var(--alert-color);
+    &.notice {
+        background-color: var(--notice-color);
+    }
+
+    &.alert {
+        background-color: var(--alert-color);
+    }
 }
 
 .error_message_container {
