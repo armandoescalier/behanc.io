@@ -28,6 +28,8 @@
               <%= button_to "Follow", follow_user_path(@user.id), method: "POST" %>
             <% end %>
           <% end %>
+        <% else %>
+          <%= link_to "Follow", new_user_session_path, class: "basic_button edit_profile_button" %>
         <% end %>
       </div>
 
