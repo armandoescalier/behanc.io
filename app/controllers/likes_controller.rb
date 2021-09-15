@@ -3,21 +3,13 @@ class LikesController < ApplicationController
   before_action :find_like, only: [:destroy]
 
   def create
-    if already_liked?
-      flash[:notice] = "You can't like more than once"
-    else
-      @project.likes.create(user_id: current_user.id)
-    end
+    @project.likes.create(user_id: current_user.id) unless already_liked?
 
     redirect_to project_path(@project, anchor: 'project_footer')
   end
 
   def destroy
-    if !already_liked?
-      flash[:notice] = 'Cannot unlike'
-    else
-      @like.destroy
-    end
+    @like.destroy if already_liked?
 
     redirect_to project_path(@project, anchor: 'project_footer')
   end
