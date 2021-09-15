@@ -1,7 +1,10 @@
 class Project < ApplicationRecord
   belongs_to :user
+
   has_rich_text :content
   has_one_attached :cover_image
+
+  has_many :likes, dependent: :destroy
 
   default_scope { order(created_at: :desc) }
 

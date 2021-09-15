@@ -6,12 +6,29 @@
   </div>
 </div>
 
-<div class="card project_bottom_card">
+<div class="card project_bottom_card" id="project_footer">
   <div class="project_footer">
+    <% if user_signed_in? %>
+      <% pre_like = @project.likes.find { |like| like.user_id == current_user.id } %>
+      <% if pre_like %>
+        <%= link_to project_like_path(@project, pre_like), class: "basic_button like_button liked_button", method: :delete do %>
+          <i class="fas fa-thumbs-up fa-2x"></i>
+        <% end %>
+      <% else %>
+        <%= link_to project_likes_path(@project), class: "basic_button like_button", method: :post do %>
+          <i class="fas fa-thumbs-up fa-2x"></i>
+        <% end %>
+      <% end %>
+    <% else %>
+      <%= link_to new_user_session_path, class: "basic_button like_button" do %>
+        <i class="fas fa-thumbs-up fa-2x"></i>
+      <% end %>
+    <% end %>
+
     <h2> <%= @project.title %></h2>
       <div class="flex_row">
         <div>
-          <i class="fas fa-thumbs-up"></i> 0
+          <i class="fas fa-thumbs-up"></i> <%= @project.likes.count %>
         </div>
         <div>
           <i class="fas fa-eye"></i> 0
@@ -67,7 +84,7 @@
     <h3><%= @project.title %></h3>
     <div class="flex_row">
       <div>
-        <i class="fas fa-thumbs-up"></i> 0
+        <i class="fas fa-thumbs-up"></i> <%= @project.likes.count %>
       </div>
       <div>
         <i class="fas fa-eye"></i> 0
