@@ -1,6 +1,6 @@
 class LikesController < ApplicationController
   before_action :set_project
-  before_action :find_like, only: [:destroy]
+  before_action :set_like, only: [:destroy]
 
   def create
     @project.likes.create(user_id: current_user.id) unless already_liked?
@@ -20,11 +20,11 @@ class LikesController < ApplicationController
     @project = Project.find_by_id(params[:project_id])
   end
 
-  def already_liked?
-    Like.where(user_id: current_user.id, project_id: params[:project_id]).exists?
+  def set_like
+    @like = @project.likes.find(params[:id])
   end
 
-  def find_like
-    @like = @project.likes.find(params[:id])
+  def already_liked?
+    Like.where(user_id: current_user.id, project_id: params[:project_id]).exists?
   end
 end
