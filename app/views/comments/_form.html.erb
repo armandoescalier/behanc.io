@@ -1,0 +1,20 @@
+ <div class="card project_comments_card">
+    <div class="project_comments">
+         <div class="card project_comments_card">
+          <%= image_tag current_user.profile_picture, class: "user_profile_image smaller" %>
+            <div class="full_width">
+            <%= form_for(@project, url: project_comments_path(@project), method: :post) do |f| %>
+                <%= render "devise/shared/error_messages", resource: @project %>
+                
+                <div class="field comments_box">
+                  <textarea class="project_comments text_area" placeholder = "What are your thoughts on this project?" name="comment[content]"> </textarea>
+                </div>
+
+                <div class="actions comment_button">
+                <%= f.submit "Post a comment" %>
+                </div>
+            <% end %>
+            </div>
+        </div>
+    </div>
+</div>

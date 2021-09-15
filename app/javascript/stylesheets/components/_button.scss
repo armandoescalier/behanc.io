@@ -45,3 +45,18 @@
   color: var(--white);
   background: var(--secondary);
 }
+
+.actions {
+  &.comment_button {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+}
+
+.button_close {
+  color: var(--light-dark);
+
+  &:hover {
+    color: var(--accent-color);
+  }
+}

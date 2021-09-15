@@ -10,6 +10,10 @@
     flex-direction: column;
     box-shadow: var(--shadow-color) 0px 1px 4px;
 
+    &.card_without_shadow {
+        box-shadow: none;
+    }
+
     &.project_show_card {
         padding: 35px 0;
         margin-bottom: 0;
@@ -26,11 +30,13 @@
     &.project_statistics_card,
     &.project_comments_card {
         width: 100%;
-        margin: 20px 70px;
     }
 
     &.project_comments_card {
+        width: 100%;
         padding: 35px 30px;
+        flex-direction: row;
+        align-items: flex-start;
     }
 }
 

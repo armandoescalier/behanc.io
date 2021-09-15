@@ -1,10 +1,15 @@
 .flex_row {
     display: flex;
     flex-direction: row;
+    align-items: center;
 
     div {
         padding: 10px;
     }
+}
+
+.last_child {
+    margin-left: auto;
 }
 
 .full_width {
