@@ -11,5 +11,9 @@ Rails.application.routes.draw do
 
   resources :projects
 
+  resources :projects do
+    resources :likes
+  end
+
   resources :follows, only: %i[create destroy]
 end

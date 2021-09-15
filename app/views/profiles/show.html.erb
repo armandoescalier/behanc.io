@@ -39,6 +39,10 @@
           <div><%= @user.projects.count %></div>
         </div>
         <div class="follows_profile">
+          <div> Appreciations </div>
+          <div><%= @user.projects.joins(:likes).count %></div>
+        </div>
+        <div class="follows_profile">
           <div> Followers </div>
           <div><%= @user.followers.count %></div>
         </div>
@@ -88,7 +92,7 @@
                 </div>
                 
                 <div>
-                  <i class="fas fa-thumbs-up"></i> 0
+                  <i class="fas fa-thumbs-up"></i> <%= project.likes.count %>
                 </div>
               </div>
             </div>

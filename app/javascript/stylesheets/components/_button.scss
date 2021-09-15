@@ -30,6 +30,14 @@
     width: auto;
     justify-content: center;
   }
+
+  &.like_button {
+    border-radius: 50px;
+
+    &.liked_button {
+      background-color: var(--light-dark);
+    }
+  }
 }
 
 .profile_section_button {
