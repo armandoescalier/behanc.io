@@ -2,8 +2,12 @@ class CommentsController < ApplicationController
   def create
     @comment = current_user.comments.new(comment_params)
 
-    flash[:alert] = @comment.errors.full_messages.to_sentence unless @comment.save
-    flash[:notice] = 'Comment created'
+    if @comment
+      @comment.save
+      flash[:notice] = 'Comment created'
+    else
+      flash[:alert] = 'Comment cannot be created'
+    end
 
     redirect_to project_path(params[:project_id])
   end
@@ -11,8 +15,12 @@ class CommentsController < ApplicationController
   def destroy
     @comment = current_user.comments.find(params[:id])
 
-    @comment.destroy
-    flash[:notice] = 'Deleted comment'
+    if @comment
+      @comment.destroy
+      flash[:notice] = 'Comment deleted'
+    else
+      flash[:alert] = 'Comment cannot be deleted'
+    end
 
     redirect_to project_path(params[:project_id])
   end

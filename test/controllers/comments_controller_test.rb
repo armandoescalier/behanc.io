@@ -5,6 +5,6 @@ class CommentsControllerTest < ActionDispatch::IntegrationTest
     sign_in users(:joe)
     post project_comments_path(projects(:one), params: { comment: { content: 'hi' } })
 
-    assert_redirected_to project_path(projects(:one))
+    assert_equal 'Comment created', flash[:notice]
   end
 end

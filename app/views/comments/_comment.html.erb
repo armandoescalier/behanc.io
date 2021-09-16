@@ -12,7 +12,7 @@
           <div class="last_child">
           <% if user_signed_in? %>
             <% if comment.user.id == current_user.id %>
-              <%= link_to project_comment_path(@project, comment), method: :delete, data: { confirm: "Are you sure about delete the comment?" }, class: "button_close" do %>
+              <%= link_to project_comment_path(@project, comment), method: :delete, data: { confirm: "Are you sure about deleting the comment?" }, class: "button_close" do %>
                 <i class="fas fa-times"></i>
               <% end %>
             <% end %>
