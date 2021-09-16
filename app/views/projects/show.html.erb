@@ -34,7 +34,7 @@
           <i class="fas fa-eye"></i> 0
         </div>
         <div>
-          <i class="fas fa-comment-alt"></i> 0
+          <i class="fas fa-comment-alt"></i> <%= @project.comments.count %>
         </div>
       </div>
       <p> Published: <%= @project.created_at.to_date %></p>
@@ -48,52 +48,58 @@
       </div>
     <% end %>
   <% end %>
-
-  <% if user_signed_in? %>
+  
+  <div class="project_comments_container">
     <div class="card project_comments_card">
-      <div class="project_comments">
-        <%= image_tag current_user.profile_picture, class: "user_profile_image smaller" %>
-        <textarea class="project_comments text_area" placeholder = "What are your thoughts on this project?"></textarea>
-      </div>
-      <div>
-        <button class="basic_button">Post a Comment</button>
-      </div>
-    </div>
-  <% end %>
-
-  <div class="card project_owner_card">
-    <div>
-      Owner
-    </div>
-    <div class="flex_row" >
-      <div>
-        <%= link_to profile_path(@project.user) do %>
-          <%= image_tag @project.user.profile_picture, class: "user_profile_image smaller" %>
+      <div class="full_width">
+        <%= render @project.comments %>
+        <% unless user_signed_in? %>
+          <div class="card card_without_shadow">
+            <h1>Login to join the conversation</h1>
+            <%= link_to "Sign up with email", create_registrations_path, class: "basic_button" %>
+          </div>
+        <% else %>
+          <%= render partial: "comments/form" %>
         <% end %>
       </div>
-      <div>
-        <%= link_to profile_path(@project.user) do %>
-          <h3><%= @project.user.full_name %></h3>
-        <% end %>
-        <p><i class="fas fa-map-marker-alt"></i> <%= @project.user.location %></p>
-      </div>
     </div>
-  </div>
 
-  <div class="card project_statistics_card">
-    <h3><%= @project.title %></h3>
-    <div class="flex_row">
-      <div>
-        <i class="fas fa-thumbs-up"></i> <%= @project.likes.count %>
+    <div>    
+      <div class="card project_owner_card">
+        <div>
+          Owner
+        </div>
+        <div class="flex_row" >
+          <div>
+            <%= link_to profile_path(@project.user) do %>
+              <%= image_tag @project.user.profile_picture, class: "user_profile_image smaller" %>
+            <% end %>
+          </div>
+          <div>
+            <%= link_to profile_path(@project.user) do %>
+              <h3><%= @project.user.full_name %></h3>
+            <% end %>
+            <p><i class="fas fa-map-marker-alt"></i> <%= @project.user.location %></p>
+          </div>
+        </div>
       </div>
-      <div>
-        <i class="fas fa-eye"></i> 0
-      </div>
-      <div>
-        <i class="fas fa-comment-alt"></i> 0
+
+      <div class="card project_statistics_card">
+        <h3><%= @project.title %></h3>
+        <div class="flex_row">
+          <div>
+            <i class="fas fa-thumbs-up"></i> <%= @project.likes.count %>
+          </div>
+          <div>
+            <i class="fas fa-eye"></i> 0
+          </div>
+          <div>
+            <i class="fas fa-comment-alt"></i> <%= @project.comments.count %>
+          </div>
+        </div>
+        <p><%= @project.category %></p>
+        <p> Published: <%= @project.created_at.to_date %></p>
       </div>
     </div>
-    <p><%= @project.category %></p>
-    <p> Published: <%= @project.created_at.to_date %></p>
   </div>
 </div>

@@ -1,8 +1,9 @@
 require 'test_helper'
 
 class LikeTest < ActiveSupport::TestCase
-  test 'follow is invalid without project and user' do
-    assert_raises(ActiveRecord::RecordInvalid) { Like.create! }
+  test 'Like is invalid without params' do
+    like = Like.new
+    assert_not like.save
   end
 
   test 'Like is valid with project and user ' do
