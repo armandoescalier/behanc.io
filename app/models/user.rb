@@ -25,6 +25,10 @@ class User < ApplicationRecord
     "#{city}, #{country}"
   end
 
+  def profile_img
+    profile_picture.attached? ? profile_picture : 'placeholder.jpg'
+  end
+
   def to_param
     username
   end
