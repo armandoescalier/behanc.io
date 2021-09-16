@@ -1,10 +1,15 @@
 .flex_row {
     display: flex;
     flex-direction: row;
+    align-items: center;
 
     div {
         padding: 10px;
     }
+}
+
+.last_child {
+    margin-left: auto;
 }
 
 .full_width {
@@ -14,4 +19,9 @@
         display: flex;
         justify-content: center;
     }
+}
+
+.flex_direction_rows_reverse {
+    display: flex;
+    flex-direction: row-reverse;
 }

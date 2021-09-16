@@ -45,3 +45,11 @@
   color: var(--white);
   background: var(--secondary);
 }
+
+.button_close {
+  color: var(--light-dark);
+
+  &:hover {
+    color: var(--accent-color);
+  }
+}
