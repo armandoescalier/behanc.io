@@ -1,7 +1,7 @@
  <div>
     <div class="project_comments">
          <div class="card project_comments_card">
-          <%= image_tag current_user.profile_picture, class: "user_profile_image smaller" %>
+          <%= image_tag current_user.profile_img, class: "user_profile_image smaller" %>
             <div class="full_width">
             <%= form_for(@project, url: project_comments_path(@project), method: :post) do |f| %>
                 <%= render "devise/shared/error_messages", resource: @project %>
