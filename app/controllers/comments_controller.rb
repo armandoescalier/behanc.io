@@ -4,15 +4,16 @@ class CommentsController < ApplicationController
 
     flash[:alert] = @comment.errors.full_messages.to_sentence unless @comment.save
 
-    redirect_to project_path(params[:project_id])
+    redirect_to project_path(params[:project_id], anchor: 'comments_card')
   end
 
   def destroy
     @comment = current_user.comments.find(params[:id])
 
     @comment.destroy
-    flash[:alert] = 'Deleted comment'
-    redirect_to project_path(params[:project_id])
+    flash[:notice] = 'Deleted comment'
+
+    redirect_to project_path(params[:project_id], anchor: 'comments_card')
   end
 
   private

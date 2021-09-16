@@ -1,4 +1,4 @@
- <div class="card project_comments_card">
+ <div>
     <div class="project_comments">
          <div class="card project_comments_card">
           <%= image_tag current_user.profile_picture, class: "user_profile_image smaller" %>
@@ -7,6 +7,7 @@
                 <%= render "devise/shared/error_messages", resource: @project %>
                 
                 <div class="field comments_box">
+                  <h4><%= f.label :comment %></h4>
                   <textarea class="project_comments text_area" placeholder = "What are your thoughts on this project?" name="comment[content]"> </textarea>
                 </div>
 

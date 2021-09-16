@@ -32,6 +32,12 @@
         width: 100%;
     }
 
+    &.project_owner_card,
+    &.project_statistics_card,
+    &.project_comments_card {
+        max-width: 85%;
+    }
+
     &.project_comments_card {
         width: 100%;
         padding: 35px 30px;
@@ -41,7 +47,7 @@
 }
 
 .preview_project_card {
-    height: 200px;
+    height: 350px;
     border-radius: 6px;
     color: var(--preview-card-text);
 
