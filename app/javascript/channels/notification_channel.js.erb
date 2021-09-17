@@ -1,6 +1,6 @@
 import consumer from "./consumer"
 
-consumer.subscriptions.create("NotificationChannel", {
+consumer.subscriptions.create({channel: "NotificationChannel", room: 9}, {
   connected() {
     // Called when the subscription is ready for use on the server
   },
@@ -19,5 +19,7 @@ consumer.subscriptions.create("NotificationChannel", {
       }
       new Notification(title, options)
     }
+    // $("#notifications").prepend(data.html);
+
   }
 });

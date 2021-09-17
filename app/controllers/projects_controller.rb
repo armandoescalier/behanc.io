@@ -1,6 +1,7 @@
 class ProjectsController < ApplicationController
   before_action :authenticate_user!, except: %i[show index]
   before_action :set_project
+  after_action :send_notification_to_followers, only: %i[create]
 
   def show
     redirect_to root_path, flash: { alert: "The project #{params[:id]} was not found" } unless @project
@@ -21,10 +22,11 @@ class ProjectsController < ApplicationController
 
     if @project.save
       flash[:notice] = 'Project was successfully created'
-      ActionCable.server.broadcast('notification_channel', "#{@project.user.full_name} has published a new project #{@project.title}! Check it out: #{project_url(@project)}")
+
       redirect_to project_path(@project)
     else
       flash[:alert] = 'Project was not created'
+
       render 'new'
     end
   end
@@ -53,6 +55,14 @@ class ProjectsController < ApplicationController
 
   def set_project
     @project = Project.find_by_id(params[:id])
+  end
+
+  def send_notification_to_followers
+    # ActionCable.server.broadcast("notification_channel", "#{@project.user.full_name} has published a new project: #{@project.title}! Check it out: #{project_url(@project)}")
+
+    @project.user.followers.each do |follower|
+      ActionCable.server.broadcast("room-#{follower.id}:notification_channel", "#{@project.user.full_name} has published a new project #{@project.title}! Check it out: #{project_url(@project)}")
+    end
   end
 
   protected
