@@ -21,6 +21,7 @@ class ProjectsController < ApplicationController
 
     if @project.save
       flash[:notice] = 'Project was successfully created'
+      ActionCable.server.broadcast('notification_channel', "#{@project.user.full_name} has published a new project #{@project.title}! Check it out: #{project_url(@project)}")
       redirect_to project_path(@project)
     else
       flash[:alert] = 'Project was not created'
