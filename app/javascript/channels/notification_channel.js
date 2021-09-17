@@ -1,6 +1,8 @@
 import consumer from "./consumer"
 
-consumer.subscriptions.create({channel: "NotificationChannel", room: 9}, {
+
+window.onload = function() {
+consumer.subscriptions.create({channel: "NotificationChannel", room: document.querySelector('body').dataset.userId}, {
   connected() {
     // Called when the subscription is ready for use on the server
   },
@@ -22,4 +24,4 @@ consumer.subscriptions.create({channel: "NotificationChannel", room: 9}, {
     // $("#notifications").prepend(data.html);
 
   }
-});
+})};

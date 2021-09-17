@@ -58,8 +58,6 @@ class ProjectsController < ApplicationController
   end
 
   def send_notification_to_followers
-    # ActionCable.server.broadcast("notification_channel", "#{@project.user.full_name} has published a new project: #{@project.title}! Check it out: #{project_url(@project)}")
-
     @project.user.followers.each do |follower|
       ActionCable.server.broadcast("room-#{follower.id}:notification_channel", "#{@project.user.full_name} has published a new project #{@project.title}! Check it out: #{project_url(@project)}")
     end
