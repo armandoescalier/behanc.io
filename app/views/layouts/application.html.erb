@@ -6,11 +6,13 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <link rel="stylesheet" href="https://cdn.rawgit.com/ireade/Toast.js/master/dist/css/Toast.min.css">
+    <script type="text/javascript" src="https://cdn.rawgit.com/ireade/Toast.js/master/dist/js/Toast.js"></script>
     <script src="https://kit.fontawesome.com/f4d8560e59.js" crossorigin="anonymous"></script>
     <%= javascript_pack_tag "application", 'data-turbolinks-track': "reload" %>
   </head>
 
-  <body>
+  <body data-user-id=<%= current_user&.id %>>
     <% if notice %>
        <p class="flash notice"><%= notice %></p>
     <% end %>

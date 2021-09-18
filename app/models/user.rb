@@ -10,6 +10,8 @@ class User < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :comments, dependent: :destroy
 
+  has_many :notifications, foreign_key: :recipient_id
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
