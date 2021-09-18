@@ -1,7 +1,7 @@
 class ProjectsController < ApplicationController
   before_action :authenticate_user!, except: %i[show index]
   before_action :set_project
-  after_action :send_notification_to_followers, only: %i[create]
+  after_action :send_notification_to_followers, only: %i[create] unless -> { @project.nil? }
 
   def show
     redirect_to root_path, flash: { alert: "The project #{params[:id]} was not found" } unless @project
