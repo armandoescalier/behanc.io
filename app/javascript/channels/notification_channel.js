@@ -13,7 +13,6 @@ window.onload = function () {
     received(data) {
       // Called when there's incoming data on the websocket for this channel
       var array_data = data.split(",")
-
       new Toast({
         message: array_data[0],
         type: 'success',
