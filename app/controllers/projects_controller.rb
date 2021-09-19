@@ -1,6 +1,7 @@
 class ProjectsController < ApplicationController
   before_action :authenticate_user!, except: %i[show index]
-  before_action :set_project
+  before_action :set_project, except: %i[edit update destroy]
+  before_action :set_current_user_projects, only: %i[edit update destroy]
 
   def show
     redirect_to root_path, flash: { alert: "The project #{params[:id]} was not found" } unless @project
@@ -54,6 +55,14 @@ class ProjectsController < ApplicationController
 
   def set_project
     @project = Project.find_by_id(params[:id])
+  end
+
+  def set_current_user_projects
+    @project = current_user.projects.find_by_id(params[:id]) or not_found
+  end
+
+  def not_found
+    redirect_to root_path, alert: 'Not found'
   end
 
   def send_notification_to_followers
