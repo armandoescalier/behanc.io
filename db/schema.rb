@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_210_915_170_444) do
+ActiveRecord::Schema.define(version: 20_210_917_152_122) do
   # These are extensions that must be enabled in order to support this database
   enable_extension 'plpgsql'
 
@@ -80,6 +80,18 @@ ActiveRecord::Schema.define(version: 20_210_915_170_444) do
     t.index ['user_id'], name: 'index_likes_on_user_id'
   end
 
+  create_table 'notifications', force: :cascade do |t|
+    t.bigint 'user_id', null: false
+    t.integer 'recipient_id'
+    t.integer 'actor_id'
+    t.string 'action'
+    t.string 'notifiable_type'
+    t.integer 'notifiable_id'
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
+    t.index ['user_id'], name: 'index_notifications_on_user_id'
+  end
+
   create_table 'projects', force: :cascade do |t|
     t.string 'title'
     t.text 'description'
@@ -119,4 +131,5 @@ ActiveRecord::Schema.define(version: 20_210_915_170_444) do
   add_foreign_key 'comments', 'users'
   add_foreign_key 'likes', 'projects'
   add_foreign_key 'likes', 'users'
+  add_foreign_key 'notifications', 'users'
 end
