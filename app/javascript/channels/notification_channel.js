@@ -14,7 +14,7 @@ window.onload = function () {
       createNotification(data);
       
       setTimeout(function() {
-        document.querySelector('.toastjs-btn--close').click();
+        document.querySelector('.toastjs-btn--close')?.click();
       }, 7000);     
     }
   })
