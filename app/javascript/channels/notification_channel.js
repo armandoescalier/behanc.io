@@ -11,20 +11,27 @@ window.onload = function () {
     },
 
     received(data) {
-      // Called when there's incoming data on the websocket for this channel
-      var array_data = data.split(",")
-      new Toast({
-        message: array_data[0],
-        type: 'success',
-        customButtons: [
-          {
-            text: 'Check it out!',
-            onClick: function () {
-              window.open(array_data[1]);
-            }
-          }
-        ]
-      });
+      createNotification(data);
+      
+      setTimeout(function() {
+        document.querySelector('.toastjs-btn--close')?.click();
+      }, 7000);     
     }
   })
 };
+
+function createNotification(data) {
+  var array_data = data.split(",")
+  new Toast({
+    message: array_data[0],
+    type: 'success',
+    customButtons: [
+      {
+        text: 'Check it out!',
+        onClick: function () {
+          window.open(array_data[1]);
+        }
+      }
+    ]
+  });
+}
