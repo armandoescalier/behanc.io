@@ -15,3 +15,7 @@ Metrics/BlockLength:
     Exclude:
         - db/**/*
         - config/environments/development.rb
+
+GlobalVars:
+  AllowedVariables:
+    - $redis
