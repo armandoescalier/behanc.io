@@ -19,12 +19,28 @@
     &.project_show_card {
         padding: 35px 0;
         margin-bottom: 0;
+
+        @media screen and (max-width: $break-point-tablet) {
+            max-width: 90%;
+        }
+
+        @media screen and (max-width: $break-point-mobile) {
+            max-width: 100%;
+        }
     }
 
     &.project_bottom_card {
         background-color: var(--main-bg-color);
         padding: 0;
         margin-top: 0;
+
+        @media screen and (max-width: $break-point-tablet) {
+            max-width: 90%;
+        }
+
+        @media screen and (max-width: $break-point-mobile) {
+            max-width: 100%;
+        }
     }
 
     &.user_profile_card,
@@ -48,6 +64,8 @@
 
         @media screen and (max-width: $break-point-tablet) {
             display: flex;
+            padding: 10px;
+            box-sizing: content-box;
             flex-direction: column;
             align-items: center;
             justify-content: center;
