@@ -8,7 +8,9 @@
     grid-gap: 20px;
     grid-template-columns: 3fr 1fr;
 
-    @include display_block;
+    @include display_block {
+        display: block;
+    }
 }
 
 .project_content_container {

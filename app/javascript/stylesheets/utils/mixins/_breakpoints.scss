@@ -2,42 +2,36 @@
 
 @mixin project_show_card_tablet {
     @media screen and (max-width: $break-point-tablet) {
-        max-width: 90%;
+        @content;
     }
 }
 
 @mixin project_show_card_mobile {
     @media screen and (max-width: $break-point-mobile) {
-        max-width: 100%;
+        @content;
     }
-}
-
-@mixin cards_grid_rows_mobile {
-    grid-template-rows: (2, 1fr);
 }
 
 @mixin display_cards_grid_tablet {
     @media screen and (max-width: $break-point-tablet) {
-        @include display_cards_grid_tablet;
-        grid-template-columns: 1fr 1fr;
+        @content;
     }
 }
 
 @mixin display_cards_grid_mobile {
     @media screen and (max-width: $break-point-mobile) {
-        @include display_cards_grid_tablet;
-        grid-template-columns: 1fr;
+        @content;
     }
 }
 
 @mixin display_block {
     @media screen and (max-width: $break-point-tablet) {
-        display: block;
+        @content;
     }
 }
 
 @mixin margin_zero {
     @media screen and (max-width: $break-point-tablet) {
-        margin: 0;
+        @content;
     }
 }

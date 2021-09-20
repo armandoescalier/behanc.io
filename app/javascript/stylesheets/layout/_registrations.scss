@@ -13,7 +13,9 @@
     &.comments_box {
         margin: 0 0 0 20px;
 
-        @include margin_zero;
+        @include margin_zero {
+            margin: 0;
+        }
     }
 }
 

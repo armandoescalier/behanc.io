@@ -1,7 +1,6 @@
 @use "../utils/variables" as *;
 @use "../utils/mixins/breakpoints" as *;
 
-
 .card {
     display: flex;
     max-width: 70%;
@@ -22,8 +21,13 @@
         padding: 35px 0;
         margin-bottom: 0;
 
-        @include project_show_card_tablet;
-        @include project_show_card_mobile;
+        @include project_show_card_tablet {
+            max-width: 90%;
+        }
+
+        @include project_show_card_mobile {
+            max-width: 100%;
+        }
     }
 
     &.project_bottom_card {
@@ -31,8 +35,13 @@
         padding: 0;
         margin-top: 0;
 
-        @include project_show_card_tablet;
-        @include project_show_card_mobile;
+        @include project_show_card_tablet {
+            max-width: 90%;
+        }
+
+        @include project_show_card_mobile {
+            max-width: 100%;
+        }
     }
 
     &.user_profile_card,
