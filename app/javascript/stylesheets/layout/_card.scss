@@ -1,4 +1,6 @@
 @use "../utils/variables" as *;
+@use "../utils/mixins/breakpoints" as *;
+
 
 .card {
     display: flex;
@@ -20,13 +22,8 @@
         padding: 35px 0;
         margin-bottom: 0;
 
-        @media screen and (max-width: $break-point-tablet) {
-            max-width: 90%;
-        }
-
-        @media screen and (max-width: $break-point-mobile) {
-            max-width: 100%;
-        }
+        @include project_show_card_tablet;
+        @include project_show_card_mobile;
     }
 
     &.project_bottom_card {
@@ -34,13 +31,8 @@
         padding: 0;
         margin-top: 0;
 
-        @media screen and (max-width: $break-point-tablet) {
-            max-width: 90%;
-        }
-
-        @media screen and (max-width: $break-point-mobile) {
-            max-width: 100%;
-        }
+        @include project_show_card_tablet;
+        @include project_show_card_mobile;
     }
 
     &.user_profile_card,

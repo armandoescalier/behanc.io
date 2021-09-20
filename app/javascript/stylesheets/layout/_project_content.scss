@@ -1,4 +1,5 @@
 @use "../utils/variables" as *;
+@use "../utils/mixins/breakpoints" as *;
 
 .project_comments_container {
     display: grid;
@@ -7,13 +8,7 @@
     grid-gap: 20px;
     grid-template-columns: 3fr 1fr;
 
-    @media screen and (max-width: $break-point-tablet) {
-        display: block;
-    }
-
-    @media screen and (max-width: $break-point-mobile) {
-        display: block;
-    }
+    @include display_block;
 }
 
 .project_content_container {
