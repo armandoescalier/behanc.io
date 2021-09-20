@@ -1,37 +1,13 @@
 @use "../variables" as *;
 
-@mixin project_show_card_tablet {
+@mixin tablet {
     @media screen and (max-width: $break-point-tablet) {
         @content;
     }
 }
 
-@mixin project_show_card_mobile {
+@mixin mobile {
     @media screen and (max-width: $break-point-mobile) {
-        @content;
-    }
-}
-
-@mixin display_cards_grid_tablet {
-    @media screen and (max-width: $break-point-tablet) {
-        @content;
-    }
-}
-
-@mixin display_cards_grid_mobile {
-    @media screen and (max-width: $break-point-mobile) {
-        @content;
-    }
-}
-
-@mixin display_block {
-    @media screen and (max-width: $break-point-tablet) {
-        @content;
-    }
-}
-
-@mixin margin_zero {
-    @media screen and (max-width: $break-point-tablet) {
         @content;
     }
 }

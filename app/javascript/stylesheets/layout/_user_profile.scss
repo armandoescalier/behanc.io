@@ -30,7 +30,7 @@
     grid-gap: 20px;
     grid-template-columns: 1fr 3fr;
 
-    @include display_block {
+    @include tablet {
         display: block;
     }
 }

@@ -8,12 +8,12 @@
     grid-template-rows: (3, 1fr);
     padding: 20px;
 
-    @include display_cards_grid_tablet {
+    @include tablet {
         grid-template-columns: 1fr 1fr;
         grid-template-rows: (2, 1fr);
     }
 
-    @include display_cards_grid_mobile {
+    @include mobile {
         grid-template-columns: 1fr;
         grid-template-rows: (2, 1fr);
     }

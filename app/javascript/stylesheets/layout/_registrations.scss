@@ -13,7 +13,7 @@
     &.comments_box {
         margin: 0 0 0 20px;
 
-        @include margin_zero {
+        @include tablet {
             margin: 0;
         }
     }
