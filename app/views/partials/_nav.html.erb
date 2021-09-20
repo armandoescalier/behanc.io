@@ -1,21 +1,21 @@
 <nav class="main_navbar">
   <ul>
-    <li class="nav-item">
+    <li class="nav_item">
       <%= link_to "Behanc.io", root_path, class: "nav-link" %>
     </li>
 
     <% if user_signed_in? %>
-      <li class="nav-item">
+      <li class="nav_item">
         <%= link_to "Profile", profile_path(current_user), class: "nav-link" %>
       </li>
-      <li class="nav-item">
+      <li class="nav_item">
         <%= link_to "Edit Profile", edit_user_registration_path, class: "nav-link" %>
       </li>
-      <li class="nav-item navbar_last_child">
-        <%= link_to "Close session", destroy_user_session_path, method: :delete, class: "nav-link" %>
+      <li class="nav_item navbar_last_child">
+        <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
       </li>
     <% else %>
-      <li class="nav-item">
+      <li class="nav_item">
         <%= link_to "Log in", new_user_session_path, class: "nav-link" %>
       </li>
     <% end %>

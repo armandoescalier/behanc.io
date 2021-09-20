@@ -1,3 +1,6 @@
+@use '../utils/variables' as *;
+@use '../utils/mixins/breakpoints' as *;
+
 .field {
     display: flex;
     flex-direction: column;
@@ -9,6 +12,10 @@
 
     &.comments_box {
         margin: 0 0 0 20px;
+
+        @include tablet {
+            margin: 0;
+        }
     }
 }
 

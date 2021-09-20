@@ -8,6 +8,16 @@
     }
 }
 
+.flex_column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    div {
+        padding: 10px;
+    }
+}
+
 .last_child {
     margin-left: auto;
 }

@@ -12,11 +12,12 @@
 */
 
 body {
-    font-family: "Roboto", sans-serif;
-    background-color: var(--main-bg-color);
-    color: var(--paragraph-color);
+  font-family: "Roboto", sans-serif;
+  background-color: var(--main-bg-color);
+  color: var(--paragraph-color);
+  min-width: 420px;
 
-    i {
-      padding: 0 5px;
-    }
+  i {
+    padding: 0 5px;
+  }
 }
