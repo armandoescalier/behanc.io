@@ -63,7 +63,7 @@
         flex-direction: row;
         align-items: flex-start;
 
-        @media screen and (max-width: $break-point-tablet) {
+        @include tablet {
             display: flex;
             padding: 10px;
             box-sizing: content-box;
