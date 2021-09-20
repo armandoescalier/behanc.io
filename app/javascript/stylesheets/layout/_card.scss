@@ -1,3 +1,5 @@
+@use "../utils/variables" as *;
+
 .card {
     display: flex;
     max-width: 70%;
@@ -40,9 +42,17 @@
 
     &.project_comments_card {
         width: 100%;
-        padding: 35px 30px;
+        padding: 30px;
         flex-direction: row;
         align-items: flex-start;
+
+        @media screen and (max-width: $break-point-tablet) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            align-content: center;
+        }
     }
 }
 

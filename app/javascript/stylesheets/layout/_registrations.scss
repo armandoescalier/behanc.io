@@ -1,3 +1,5 @@
+@use '../utils/variables' as *;
+
 .field {
     display: flex;
     flex-direction: column;
@@ -9,6 +11,10 @@
 
     &.comments_box {
         margin: 0 0 0 20px;
+
+        @media screen and (max-width: $break-point-tablet) {
+            margin: 0;
+        }
     }
 }
 

@@ -1,9 +1,19 @@
+@use "../utils/variables" as *;
+
 .project_comments_container {
     display: grid;
     width: 95%;
     margin: 20px 0;
     grid-gap: 20px;
     grid-template-columns: 3fr 1fr;
+
+    @media screen and (max-width: $break-point-tablet) {
+        display: block;
+    }
+
+    @media screen and (max-width: $break-point-mobile) {
+        display: block;
+    }
 }
 
 .project_content_container {
