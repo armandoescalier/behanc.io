@@ -1,24 +1,42 @@
-# README
+# Behanc.io
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Aplicación web que busca replicar el sitio web "Behance" de adobe.
 
-Things you may want to cover:
+Su funcionalidad es similar a una red social, su objetivo es la exposición de proyectos siendo un portafolio digital para artistas, diseñadores gráficos, fotografos, etc.
 
-* Ruby version
+## Features
+1. Autenticación
+2. Usuario puede editar su perfil
+3. Usuario puede ver su perfil
+4. Usuario puede ver el perfil público de otro usuario
+5. Usuario puede crear un proyecto
+6. Usuario puede ver detalle de un proyecto
+7. Usuario puede ver los proyectos de otro usuario
+8. Usuario puede seguir a otro usuario
+9. Usuario puede ver proyectos desde home
+10. Usuario puede dar like a un proyecto
+11. Usuario puede comentar un proyecto
 
-* System dependencies
+* Feature especial: Notificar seguidores en tiempo real.
 
-* Configuration
+## Recursos utilizados
 
-* Database creation
+* ActionText para el contenido de los projectos con rich text.
 
-* Database initialization
+* ActionCable para implementar notificaciones en tiempo real a los followers cuando un usuario al que sigues publica un proyecto nuevo. (también utiliza redis)
 
-* How to run the test suite
+* ActiveStorage y AWS para almacenamiento de imagenes en la nube.
 
-* Services (job queues, cache servers, search engines, etc.)
+* Devise es utilizado para la autenticación de usuarios.
 
-* Deployment instructions
+## Especificaciones
 
-* ...
+* La base de datos utilizada es postgres.
+
+* Se utiliza rubocop para tener mantener la consistencia en el código.
+
+* Tiene deploy automático a staging y producción en HEROKU, desde la rama development y la rama master respectivamente. Cuenta con verificación de test y de rubocop previos a publicarse en gitlab y previo al deployment a HEROKU.
+
+* Los test utilizan minitest, hay test para controladores y modelos.
+
+* Para la UI se utilizó CSS puro con SASS implementando 7-1, se encuentra dentro de la carpeta javascript.
