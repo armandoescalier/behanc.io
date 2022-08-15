@@ -1,8 +1,10 @@
 # Behanc.io
 
-Aplicación web que busca replicar el sitio web "Behance" de adobe.
+Aplicación web que busca replicar el sitio web [Behance](https://www.behance.net) de Adobe.
 
 Su funcionalidad es similar a una red social, su objetivo es la exposición de proyectos siendo un portafolio digital para artistas, diseñadores gráficos, fotografos, etc.
+
+* Este fue mi primer acercamiento con Rails, además de ser mi proyecto final del programa `Padawans 2021` de [michelada.io](https://www.michelada.io) .
 
 ## Features
 1. Autenticación
@@ -21,22 +23,34 @@ Su funcionalidad es similar a una red social, su objetivo es la exposición de p
 
 ## Recursos utilizados
 
-* ActionText para el contenido de los projectos con rich text.
+* `ActionText` para el contenido de los projectos con rich text.
 
-* ActionCable para implementar notificaciones en tiempo real a los followers cuando un usuario al que sigues publica un proyecto nuevo. (también utiliza redis)
+* `ActionCable` para implementar notificaciones en tiempo real a los followers cuando un usuario al que sigues publica un proyecto nuevo. (también utiliza `redis`)
 
-* ActiveStorage y AWS para almacenamiento de imagenes en la nube.
+* `ActiveStorage` y `AWS` para almacenamiento de imagenes en la nube.
 
-* Devise es utilizado para la autenticación de usuarios.
+* `Devise` es utilizado para la autenticación de usuarios.
 
 ## Especificaciones
 
-* La base de datos utilizada es postgres.
+* La base de datos utilizada es `PostgreSQL`.
 
-* Se utiliza rubocop para tener mantener la consistencia en el código.
+* Se utiliza `rubocop` para tener mantener la consistencia en el código.
 
-* Tiene deploy automático a staging y producción en HEROKU, desde la rama development y la rama master respectivamente. Cuenta con verificación de test y de rubocop previos a publicarse en gitlab y previo al deployment a HEROKU.
+* Tiene deploy automático a staging y producción en `HEROKU`, desde la rama `development` y la rama `master` respectivamente. Cuenta con verificación de test y de `rubocop` previos a publicarse en gitlab y previo al deployment a `HEROKU`.
 
-* Los test utilizan minitest, hay test para controladores y modelos.
+* Los test utilizan `minitest`, hay test para controladores y modelos.
 
-* Para la UI se utilizó CSS puro con SASS implementando 7-1, se encuentra dentro de la carpeta javascript.
+* Para la UI se utilizó CSS puro con SASS implementando `7-1`, se encuentra dentro de la carpeta javascript.
+
+## Uso
+Para utilizar la app es necesario correr el servidor de `Rails` y `Redis`.
+
+```bash
+$ rails s
+```
+
+En una pestaña distinta de la terminal corre el comando:
+```bash
+$ redis-server
+```
